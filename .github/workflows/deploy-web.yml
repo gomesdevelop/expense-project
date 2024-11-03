@@ -33,8 +33,8 @@ jobs:
       - name: Push the image to Docker Hub
         uses: docker/build-push-action@v6
         with:
-          context: ./expense-api
-          file: ./expense-api/Dockerfile
+          context: ./expense-web
+          file: ./expense-web/Dockerfile
           push: true
           tags: |
             ${{ env.CONTAINER_NAME }}:${{ steps.build-number.outputs.BUILD_NUMBER }}
