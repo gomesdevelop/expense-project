@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  CONTAINER_NAME: ${{ github.repository }}
+  CONTAINER_NAME: ${{ github.repository }}-api
 
 jobs:
   build:
@@ -32,7 +32,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./expense-api
-          file: ./Dockerfile
+          file: ./expense-api/Dockerfile
           push: true
           tags: |
             ${{ env.CONTAINER_NAME }}:${{ steps.build-number.outputs.BUILD_NUMBER }}
