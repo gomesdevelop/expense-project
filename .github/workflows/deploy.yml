@@ -51,7 +51,7 @@ jobs:
       - name: Generate container name
         id: container-name
         run: |
-          container_name="${{ env.CONTAINER_NAME }}-api"
+          container_name="${{ env.CONTAINER_NAME }}-web"
           echo "INTERNAL_CONTAINER_NAME=$container_name" >> $GITHUB_ENV
 
       - uses: actions/checkout@v3
