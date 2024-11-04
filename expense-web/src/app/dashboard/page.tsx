@@ -13,8 +13,15 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { useEffect } from "react";
 
 export default function Dashboard() {
+  useEffect(() => {
+    fetch(import.meta.env.VITE_APP_EXPENSE_API_URL)
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
+
   return (
     <SidebarProvider>
       <AppSidebar />
